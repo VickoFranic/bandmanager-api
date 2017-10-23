@@ -25,7 +25,7 @@ class ControllerBase extends Controller
     public function beforeExecuteRoute(Dispatcher $dispatcher)
     {
         if ($this->request->getContentType() !== 'application/json') {
-            //exit;
+            exit;
         }
     }
 }
