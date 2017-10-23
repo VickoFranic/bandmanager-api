@@ -6,7 +6,7 @@ class AuthController extends ControllerBase
 {
     public function indexAction()
     {
-
+        return $this->serializeToJsonResponse(['auth' => true]);
     }
 }
 

@@ -33,9 +33,9 @@ try {
      */
     $application = new Application($di);
 
-    $application->handle();
+    $application->handle()->send();
 
 } catch (\Exception $e) {
-    echo $e->getMessage() . '<br>';
-    echo '<pre>' . $e->getTraceAsString() . '</pre>';
+    // @todo
+    // Handle err
 }

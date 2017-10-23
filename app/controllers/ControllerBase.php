@@ -14,7 +14,7 @@ class ControllerBase extends Controller
         $response->setJsonContent($data);
         $response->setStatusCode($statusCode);
 
-        return $response->send();
+        return $response;
     }
 
     public function afterExecuteRoute(Dispatcher $dispatcher)
@@ -25,7 +25,7 @@ class ControllerBase extends Controller
     public function beforeExecuteRoute(Dispatcher $dispatcher)
     {
         if ($this->request->getContentType() !== 'application/json') {
-            exit;
+            //exit;
         }
     }
 }
