@@ -1,0 +1,5 @@
+.phalcon
+.phpintel
+.idea
+vendor
+app/config/config.php
