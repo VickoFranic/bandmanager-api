@@ -1,4 +1,7 @@
 {
+    "autoload": {
+        "psr-4": {"BandManager\\": "app/"}
+    },
     "require": {
         "facebook/graph-sdk": "^5.6"
     },
