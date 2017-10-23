@@ -1,5 +1,7 @@
 <?php
 
+namespace BandManager\Models;
+
 use Phalcon\Validation\Validator\Email as EmailValidator;
 
 /**

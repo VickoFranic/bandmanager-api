@@ -1,9 +1,11 @@
 <?php
+
+namespace BandManager;
+
 use Phalcon\Di\FactoryDefault;
+use Phalcon\Mvc\Application;
 
 require_once __DIR__ . '/../vendor/autoload.php';
-
-error_reporting(E_ALL);
 
 define('BASE_PATH', dirname(__DIR__));
 define('APP_PATH', BASE_PATH . '/app');
@@ -27,21 +29,11 @@ try {
     include APP_PATH . '/config/services.php';
 
     /**
-     * Get config service for use in inline setup below
-     */
-    $config = $di->getConfig();
-
-    /**
-     * Include Autoloader
-     */
-    include APP_PATH . '/config/loader.php';
-
-    /**
      * Handle the request
      */
-    $application = new \Phalcon\Mvc\Application($di);
+    $application = new Application($di);
 
-    echo str_replace(["\n","\r","\t"], '', $application->handle()->getContent());
+    $application->handle();
 
 } catch (\Exception $e) {
     echo $e->getMessage() . '<br>';

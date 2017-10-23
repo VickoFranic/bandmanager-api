@@ -1,7 +1,15 @@
 <?php
 
-$router = $di->getRouter();
+use Phalcon\Mvc\Router;
 
-// Define your routes here
+$createDefaultRoutes = false;
+$router = new Router($createDefaultRoutes);
 
-$router->handle();
+$router->setDefaultNamespace('BandManager\\Controllers\\');
+
+$router->addGet('/', 'Index::index');
+$router->addGet('/api/auth', 'Auth::index');
+
+$router->notFound(['controller' => 'index', 'action' => 'notFound']);
+
+return $router;

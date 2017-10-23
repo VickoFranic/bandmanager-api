@@ -1,5 +1,7 @@
 <?php
 
+namespace BandManager\Controllers;
+
 class IndexController extends ControllerBase
 {
 
@@ -8,5 +10,8 @@ class IndexController extends ControllerBase
 
     }
 
+    public function notFoundAction()
+    {
+        return $this->serializeToJsonResponse([], 404);
+    }
 }
-
